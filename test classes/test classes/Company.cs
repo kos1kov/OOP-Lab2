@@ -10,17 +10,11 @@ namespace test_classes
     {
         public string name;
         public int year;
-        public Company()
-        {
-        }
-        public Company(string name)
-        {
-            this.name = name;
-        }
-       public Company(string name,int year) : this(name)
+
+        public Company(string name,int year)
         {
             this.year = year;
-
+            this.name = name;
         }
 
     }

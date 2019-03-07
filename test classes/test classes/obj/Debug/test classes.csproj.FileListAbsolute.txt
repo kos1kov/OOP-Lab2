@@ -5,3 +5,10 @@ C:\Users\dimak\OneDrive\Рабочий стол\test classes\test classes\obj\De
 C:\Users\dimak\OneDrive\Рабочий стол\test classes\test classes\obj\Debug\test classes.csproj.CoreCompileInputs.cache
 C:\Users\dimak\OneDrive\Рабочий стол\test classes\test classes\obj\Debug\test classes.exe
 C:\Users\dimak\OneDrive\Рабочий стол\test classes\test classes\obj\Debug\test classes.pdb
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\obj\Debug\test classes.csprojAssemblyReference.cache
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\obj\Debug\test classes.csproj.CoreCompileInputs.cache
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\obj\Debug\test classes.exe
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\obj\Debug\test classes.pdb
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\bin\Debug\test classes.exe.config
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\bin\Debug\test classes.exe
+C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\test classes\test classes\bin\Debug\test classes.pdb

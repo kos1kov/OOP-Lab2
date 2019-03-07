@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace test_classes
 {
-    class Employe:Company
+    public class Employee:Company
     {
         public float salary;
-        public Employe()
-        {
-        }
-        public Employe(float salary)
+
+        public Employee(string name, int year, float salary) : base(name, year)
         {
             this.salary = salary;
         }
-        public void printInfo()
+
+        public virtual string Info()
         {
-            Console.WriteLine($"{name}, {year}, {salary}");
+           return $"Name : {name}, year: {year}, salary:  {salary}";
         }
     }
 }
