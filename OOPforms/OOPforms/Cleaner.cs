@@ -11,15 +11,16 @@ namespace OOPforms
         public bool NightShift;
         public int holidays;
 
-        public Cleaner(string name, int year, float salary, bool IsNightShift, int numOfHolidays) : base(name, year, salary)
+        public Cleaner(string name, int year, float salary, int DayOfHolidays, bool IsNightShift) : base(name, year, salary, DayOfHolidays)
         {
             NightShift = IsNightShift;
-            holidays = numOfHolidays;
         }
+
+
 
         public override string Info()
         {
-            return $"{(NightShift ? "Cleaner is working in nightshift" : "Cleaner is at dayshift")}, number of holidays: {holidays}";
+            return $"{(NightShift ? "Cleaner is working in nightshift" : "Cleaner is at dayshift")}";
         }
     }
 }

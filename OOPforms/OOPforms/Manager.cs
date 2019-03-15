@@ -12,16 +12,14 @@ namespace OOPforms
         public string Department;
         public int Experience;
 
-        public Manager(string name, int year, float salary, float Premium, string Department, int Experience) : base(name, year, salary)
+        public Manager(string name, int year, float salary, int DayOfHolidays, string Department, int Experience) : base(name, year, salary, DayOfHolidays)
         {
-            this.Premium = Premium;
             this.Department = Department;
             this.Experience = Experience;
         }
 
-        public float FullSalary()
-        {
-            return Premium + salary;
-        }
+
+
+
     }
 }

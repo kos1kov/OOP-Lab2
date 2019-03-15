@@ -8,8 +8,8 @@ namespace OOPforms
 {
    public class Company
     {
-        public string name;
-        public int year;
+        public string name { get; set; }
+        public int year { get; set; }
 
         public Company(string name,int year)
         {

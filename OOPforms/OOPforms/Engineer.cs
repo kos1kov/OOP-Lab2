@@ -10,17 +10,16 @@ namespace OOPforms
     {
        
         public  List<string> equipment;
-        public int holidays;
 
-        public Engineer(string name, int year, List<string> equip, int holiday, float salary) : base(name, year, salary)
+        public Engineer(string name, int year, float salary, int DayOfHolidays, List<string> equip) : base(name, year, salary, DayOfHolidays)
         {
             this.equipment = equip;
-            this.holidays = holiday;
         }
+
 
         public override string Info()
         {
-         return $"{name}, {year}, {salary}, {holidays}";
+         return $"{name}, {year}, {salary}, {DayOfHolidays}";
         }
     }
 }

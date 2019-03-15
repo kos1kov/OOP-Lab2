@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -16,79 +17,64 @@ namespace OOPforms
         public Form1()
         {
             InitializeComponent();
-            create<Company>(0);
-            create<Owner>(1);
-            create<Manager>(2);
-            create<Employee>(3);
-            create<Engineer>(4);
-            create<Cleaner>(5);
-
-
-
-            void create<T>(int number)
-            {
-                Type name = typeof(T);
-                FieldInfo[] myField = name.GetFields();
-                GroupBox gb = new GroupBox
-                {
-                    Name = name.Name.ToString(),
-                    Text = name.Name.ToString(),
-                    Width = 200,
-                    Height = 70 * myField.Length,
-                    Location = new Point(200*number, 10),
-
-                };
-                Controls.Add(value: gb);
-                for (int i = 0; i <= myField.Length - 1; i++)
-                {
-                    Label lb = new Label
-                    {
-                        Text = myField[i].Name.ToString(),
-                        Left = 45,
-                        Top = (47 * i) + 15
-
-                    };
-                    gb.Controls.Add(lb);
-                    TextBox tb = new TextBox
-                    {
-                        Left = 45,
-                        Top = (47 * i) + 40,
-                        Height = 15,
-                        Width = 100
-                    };
-                    gb.Controls.Add(tb);
-                }
-            }
-
+           
 
         }
+    
+        public List<Company> CompanyList = new List<Company>();
+        public List<Owner> OwnerList = new List<Owner>();
+        public List<Manager> ManagerList = new List<Manager>();
+        public List<Engineer> EngineerList = new List<Engineer>();
+        
 
-
-
-
+        public int numbers = 0;
+       private List<Cleaner> CleanerList = new List<Cleaner>();
         private void button1_Click(object sender, EventArgs e)
         {
+            // string key = ((KeyValuePair<string, Company>)comboBox1.SelectedItem).Key;//Company
 
-            List<Company> numbers = new List<Company>();
-            numbers.Add((Company)comboBox1.SelectedValue);
+            Company company = new Company(CompanyName.Text, int.Parse(CompanyYear.Text));
 
-            MessageBox.Show(numbers[0].year.ToString());
+            CompanyList.Add(company);
+
         }
-
+        public Dictionary<string, Company> comboSource = new Dictionary<string, Company>();
         private void Form1_Load(object sender, EventArgs e)
         {
-            Dictionary<string, Company> comboSource = new Dictionary<string, Company>();
-            comboSource.Add("Company", new Company(string.Empty, 0));
-            comboSource.Add("Owner", new Owner(string.Empty, 0, 0, null, null));
-            comboSource.Add("Employee", new Employee(string.Empty,0,0));
-            comboSource.Add("Manager", new Manager(string.Empty,0,0,0,string.Empty,0));
-            comboSource.Add("Engineer", new Engineer(string.Empty,0,null,0,0));
-            comboSource.Add("Cleaner", new Cleaner(string.Empty,0,0,false,0));
-            comboBox1.DataSource = new BindingSource(comboSource, null);
-            comboBox1.DisplayMember = "Key";
-            comboBox1.ValueMember = "Value";
-            
+
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Owner owner = new Owner(OwnerName.Text, int.Parse(OwnerYear.Text), float.Parse(OwnerBudget.Text), null, null);
+
+
+            OwnerList.Add(owner);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Manager manager = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), float.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
+                ManagerDepartment.Text, int.Parse(ManagerExperience.Text));
+
+            ManagerList.Add(manager);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Engineer engineer = new Engineer(EngineerName.Text, int.Parse(EngineerYear.Text), float.Parse(EngineerSalary.Text), int.Parse(EngineerDayOfHolidays.Text),
+                null);
+
+            EngineerList.Add(engineer);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cleaner cleaner = new Cleaner(EngineerName.Text, int.Parse(EngineerYear.Text), float.Parse(EngineerSalary.Text), int.Parse(EngineerDayOfHolidays.Text),
+                bool.Parse(CleanerNightShift.SelectedValue.ToString())
+                );
+
+            CleanerList.Add(cleaner);
+        }
     }
 }

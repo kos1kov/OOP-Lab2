@@ -10,10 +10,14 @@ namespace OOPforms
     {
         public float salary;
 
-        public Employee(string name, int year, float salary) : base(name, year)
+
+        public Employee(string name, int year, float salary, int DayOfHolidays) : base(name, year)
         {
             this.salary = salary;
+            this.DayOfHolidays = DayOfHolidays;
         }
+
+        public int DayOfHolidays { get; }
 
         public virtual string Info()
         {
