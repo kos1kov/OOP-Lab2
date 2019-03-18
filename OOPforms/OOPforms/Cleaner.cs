@@ -8,8 +8,8 @@ namespace OOPforms
 {
     class Cleaner : Employee
     {
-        public bool NightShift;
-        public int holidays;
+        public bool NightShift { get; set; }
+
 
         public Cleaner(string name, int year, float salary, int DayOfHolidays, bool IsNightShift) : base(name, year, salary, DayOfHolidays)
         {

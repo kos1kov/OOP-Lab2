@@ -7,17 +7,15 @@ namespace OOPforms
 {
    public class Owner : Company
     {
-        public float budget;
+        public float budget { get; set; }
 
-        public Owner(string name, int year, float budget, Manager manager, Engineer engineer) : base(name, year)
+        public Owner(string name, int year, float budget, Manager manager) : base(name, year)
         {
             this.budget = budget;
             this.manager = manager;
-            this.engineer = engineer;
         }
 
-        public Manager manager;
-        public Engineer engineer;
-        
+        public Manager manager { get; set; }
+
     }
 }

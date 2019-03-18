@@ -8,8 +8,8 @@ namespace OOPforms
 {
     public class Employee:Company
     {
-        public float salary;
-
+        public float salary { get; set; }
+        
 
         public Employee(string name, int year, float salary, int DayOfHolidays) : base(name, year)
         {
@@ -17,7 +17,7 @@ namespace OOPforms
             this.DayOfHolidays = DayOfHolidays;
         }
 
-        public int DayOfHolidays { get; }
+        public int DayOfHolidays { get; set; }
 
         public virtual string Info()
         {

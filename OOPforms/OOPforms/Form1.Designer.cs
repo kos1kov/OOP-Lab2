@@ -44,13 +44,12 @@
             this.OwnerYear = new System.Windows.Forms.TextBox();
             this.OwnerName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.CompanyT = new System.Windows.Forms.TabPage();
+            this.OwnerT = new System.Windows.Forms.TabPage();
             this.button3 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ManagerT = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ManagerDayOfHolidays = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -64,7 +63,8 @@
             this.ManagerYear = new System.Windows.Forms.TextBox();
             this.ManagerName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.EngineerT = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.EngineerEquipment = new System.Windows.Forms.TextBox();
@@ -76,34 +76,45 @@
             this.EngineerYear = new System.Windows.Forms.TextBox();
             this.EngineerName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.CleanerT = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.CleanerNightShift = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.CleanerDayOfHolidays = new System.Windows.Forms.TextBox();
+            this.CleanerSalary = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.CleanerYear = new System.Windows.Forms.TextBox();
+            this.CleanerName = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Companydata = new System.Windows.Forms.DataGridView();
+            this.Ownerdata = new System.Windows.Forms.DataGridView();
+            this.Managerdata = new System.Windows.Forms.DataGridView();
+            this.Engineerdata = new System.Windows.Forms.DataGridView();
+            this.Cleanerdata = new System.Windows.Forms.DataGridView();
+            this.button6 = new System.Windows.Forms.Button();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.CompanyT.SuspendLayout();
+            this.OwnerT.SuspendLayout();
+            this.ManagerT.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.EngineerT.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.CleanerT.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Companydata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ownerdata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Managerdata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Engineerdata)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cleanerdata)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -245,50 +256,43 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "name";
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
-            // 
-            // form1BindingSource1
-            // 
-            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
-            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.CompanyT);
+            this.tabControl1.Controls.Add(this.OwnerT);
+            this.tabControl1.Controls.Add(this.ManagerT);
+            this.tabControl1.Controls.Add(this.EngineerT);
+            this.tabControl1.Controls.Add(this.CleanerT);
             this.tabControl1.Location = new System.Drawing.Point(567, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(366, 324);
             this.tabControl1.TabIndex = 8;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
-            // tabPage1
+            // CompanyT
             // 
-            this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(358, 295);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.CompanyT.Controls.Add(this.groupBox1);
+            this.CompanyT.Controls.Add(this.button1);
+            this.CompanyT.Location = new System.Drawing.Point(4, 25);
+            this.CompanyT.Name = "CompanyT";
+            this.CompanyT.Padding = new System.Windows.Forms.Padding(3);
+            this.CompanyT.Size = new System.Drawing.Size(358, 295);
+            this.CompanyT.TabIndex = 0;
+            this.CompanyT.Text = "Company";
+            this.CompanyT.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // OwnerT
             // 
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(358, 295);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.OwnerT.Controls.Add(this.button3);
+            this.OwnerT.Controls.Add(this.groupBox2);
+            this.OwnerT.Location = new System.Drawing.Point(4, 25);
+            this.OwnerT.Name = "OwnerT";
+            this.OwnerT.Padding = new System.Windows.Forms.Padding(3);
+            this.OwnerT.Size = new System.Drawing.Size(358, 295);
+            this.OwnerT.TabIndex = 1;
+            this.OwnerT.Text = "Owner";
+            this.OwnerT.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -300,17 +304,27 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // tabPage3
+            // ManagerT
             // 
-            this.tabPage3.Controls.Add(this.button4);
-            this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(358, 295);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.ManagerT.Controls.Add(this.button4);
+            this.ManagerT.Controls.Add(this.groupBox3);
+            this.ManagerT.Location = new System.Drawing.Point(4, 25);
+            this.ManagerT.Name = "ManagerT";
+            this.ManagerT.Padding = new System.Windows.Forms.Padding(3);
+            this.ManagerT.Size = new System.Drawing.Size(358, 295);
+            this.ManagerT.TabIndex = 2;
+            this.ManagerT.Text = "Manager";
+            this.ManagerT.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(220, 252);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(132, 24);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Добавить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox3
             // 
@@ -430,24 +444,35 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "name";
             // 
-            // tabPage4
+            // EngineerT
             // 
-            this.tabPage4.Controls.Add(this.button5);
-            this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(358, 295);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.EngineerT.Controls.Add(this.button6);
+            this.EngineerT.Controls.Add(this.EngineerEquipment);
+            this.EngineerT.Controls.Add(this.label12);
+            this.EngineerT.Controls.Add(this.groupBox4);
+            this.EngineerT.Location = new System.Drawing.Point(4, 25);
+            this.EngineerT.Name = "EngineerT";
+            this.EngineerT.Padding = new System.Windows.Forms.Padding(3);
+            this.EngineerT.Size = new System.Drawing.Size(358, 295);
+            this.EngineerT.TabIndex = 3;
+            this.EngineerT.Text = "Engineer";
+            this.EngineerT.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(33, 216);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(132, 24);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Добавить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.EngineerEquipment);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.EngineerDayOfHolidays);
+            this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.EngineerSalary);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label15);
@@ -464,7 +489,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(59, 195);
+            this.label12.Location = new System.Drawing.Point(246, 20);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 17);
             this.label12.TabIndex = 20;
@@ -472,7 +497,7 @@
             // 
             // EngineerEquipment
             // 
-            this.EngineerEquipment.Location = new System.Drawing.Point(51, 215);
+            this.EngineerEquipment.Location = new System.Drawing.Point(238, 49);
             this.EngineerEquipment.Name = "EngineerEquipment";
             this.EngineerEquipment.Size = new System.Drawing.Size(100, 22);
             this.EngineerEquipment.TabIndex = 19;
@@ -542,29 +567,39 @@
             this.label16.TabIndex = 11;
             this.label16.Text = "name";
             // 
-            // tabPage5
+            // CleanerT
             // 
-            this.tabPage5.Controls.Add(this.button2);
-            this.tabPage5.Controls.Add(this.groupBox5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(358, 295);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.CleanerT.Controls.Add(this.button2);
+            this.CleanerT.Controls.Add(this.groupBox5);
+            this.CleanerT.Location = new System.Drawing.Point(4, 25);
+            this.CleanerT.Name = "CleanerT";
+            this.CleanerT.Padding = new System.Windows.Forms.Padding(3);
+            this.CleanerT.Size = new System.Drawing.Size(358, 295);
+            this.CleanerT.TabIndex = 4;
+            this.CleanerT.Text = "Cleaner";
+            this.CleanerT.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(223, 219);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(132, 24);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Добавить";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.CleanerNightShift);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label19);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.CleanerDayOfHolidays);
+            this.groupBox5.Controls.Add(this.CleanerSalary);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Controls.Add(this.label21);
-            this.groupBox5.Controls.Add(this.textBox6);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.CleanerYear);
+            this.groupBox5.Controls.Add(this.CleanerName);
             this.groupBox5.Controls.Add(this.label22);
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
@@ -602,19 +637,19 @@
             this.label19.TabIndex = 18;
             this.label19.Text = "DayOfHolidays";
             // 
-            // textBox2
+            // CleanerDayOfHolidays
             // 
-            this.textBox2.Location = new System.Drawing.Point(46, 170);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 17;
+            this.CleanerDayOfHolidays.Location = new System.Drawing.Point(46, 170);
+            this.CleanerDayOfHolidays.Name = "CleanerDayOfHolidays";
+            this.CleanerDayOfHolidays.Size = new System.Drawing.Size(100, 22);
+            this.CleanerDayOfHolidays.TabIndex = 17;
             // 
-            // textBox5
+            // CleanerSalary
             // 
-            this.textBox5.Location = new System.Drawing.Point(46, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 16;
+            this.CleanerSalary.Location = new System.Drawing.Point(46, 125);
+            this.CleanerSalary.Name = "CleanerSalary";
+            this.CleanerSalary.Size = new System.Drawing.Size(100, 22);
+            this.CleanerSalary.TabIndex = 16;
             // 
             // label20
             // 
@@ -634,20 +669,20 @@
             this.label21.TabIndex = 14;
             this.label21.Text = "Year";
             // 
-            // textBox6
+            // CleanerYear
             // 
-            this.textBox6.Location = new System.Drawing.Point(46, 81);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 13;
-            this.textBox6.Text = "0";
+            this.CleanerYear.Location = new System.Drawing.Point(46, 81);
+            this.CleanerYear.Name = "CleanerYear";
+            this.CleanerYear.Size = new System.Drawing.Size(100, 22);
+            this.CleanerYear.TabIndex = 13;
+            this.CleanerYear.Text = "0";
             // 
-            // textBox7
+            // CleanerName
             // 
-            this.textBox7.Location = new System.Drawing.Point(46, 34);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 12;
+            this.CleanerName.Location = new System.Drawing.Point(46, 34);
+            this.CleanerName.Name = "CleanerName";
+            this.CleanerName.Size = new System.Drawing.Size(100, 22);
+            this.CleanerName.TabIndex = 12;
             // 
             // label22
             // 
@@ -658,41 +693,83 @@
             this.label22.TabIndex = 11;
             this.label22.Text = "name";
             // 
-            // button4
+            // Companydata
             // 
-            this.button4.Location = new System.Drawing.Point(220, 252);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 24);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Добавить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.Companydata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Companydata.Location = new System.Drawing.Point(12, 80);
+            this.Companydata.Name = "Companydata";
+            this.Companydata.RowTemplate.Height = 24;
+            this.Companydata.Size = new System.Drawing.Size(456, 223);
+            this.Companydata.TabIndex = 9;
             // 
-            // button5
+            // Ownerdata
             // 
-            this.button5.Location = new System.Drawing.Point(220, 246);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 24);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.Ownerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Ownerdata.Location = new System.Drawing.Point(12, 80);
+            this.Ownerdata.Name = "Ownerdata";
+            this.Ownerdata.RowTemplate.Height = 24;
+            this.Ownerdata.Size = new System.Drawing.Size(456, 223);
+            this.Ownerdata.TabIndex = 10;
+            this.Ownerdata.Visible = false;
             // 
-            // button2
+            // Managerdata
             // 
-            this.button2.Location = new System.Drawing.Point(223, 219);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 24);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Добавить";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Managerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Managerdata.Location = new System.Drawing.Point(12, 80);
+            this.Managerdata.Name = "Managerdata";
+            this.Managerdata.RowTemplate.Height = 24;
+            this.Managerdata.Size = new System.Drawing.Size(456, 223);
+            this.Managerdata.TabIndex = 11;
+            this.Managerdata.Visible = false;
+            // 
+            // Engineerdata
+            // 
+            this.Engineerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Engineerdata.Location = new System.Drawing.Point(12, 80);
+            this.Engineerdata.Name = "Engineerdata";
+            this.Engineerdata.RowTemplate.Height = 24;
+            this.Engineerdata.Size = new System.Drawing.Size(456, 223);
+            this.Engineerdata.TabIndex = 12;
+            this.Engineerdata.Visible = false;
+            // 
+            // Cleanerdata
+            // 
+            this.Cleanerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Cleanerdata.Location = new System.Drawing.Point(12, 80);
+            this.Cleanerdata.Name = "Cleanerdata";
+            this.Cleanerdata.RowTemplate.Height = 24;
+            this.Cleanerdata.Size = new System.Drawing.Size(456, 223);
+            this.Cleanerdata.TabIndex = 13;
+            this.Cleanerdata.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(235, 77);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(103, 51);
+            this.button6.TabIndex = 21;
+            this.button6.Text = "Добавить оборудование";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
+            // 
+            // form1BindingSource1
+            // 
+            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1461, 568);
+            this.Controls.Add(this.Cleanerdata);
+            this.Controls.Add(this.Engineerdata);
+            this.Controls.Add(this.Managerdata);
+            this.Controls.Add(this.Ownerdata);
+            this.Controls.Add(this.Companydata);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -701,20 +778,26 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
+            this.CompanyT.ResumeLayout(false);
+            this.OwnerT.ResumeLayout(false);
+            this.ManagerT.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
+            this.EngineerT.ResumeLayout(false);
+            this.EngineerT.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.tabPage5.ResumeLayout(false);
+            this.CleanerT.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Companydata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Ownerdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Managerdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Engineerdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cleanerdata)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -738,9 +821,9 @@
         private System.Windows.Forms.TextBox OwnerBudget;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage CompanyT;
+        private System.Windows.Forms.TabPage OwnerT;
+        private System.Windows.Forms.TabPage ManagerT;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox ManagerExperience;
@@ -752,7 +835,7 @@
         private System.Windows.Forms.TextBox ManagerYear;
         private System.Windows.Forms.TextBox ManagerName;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage EngineerT;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox EngineerEquipment;
@@ -766,22 +849,28 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox ManagerDayOfHolidays;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage CleanerT;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ComboBox CleanerNightShift;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox CleanerDayOfHolidays;
+        private System.Windows.Forms.TextBox CleanerSalary;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox CleanerYear;
+        private System.Windows.Forms.TextBox CleanerName;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView Companydata;
+        private System.Windows.Forms.DataGridView Ownerdata;
+        private System.Windows.Forms.DataGridView Managerdata;
+        private System.Windows.Forms.DataGridView Engineerdata;
+        private System.Windows.Forms.DataGridView Cleanerdata;
+        private System.Windows.Forms.Button button6;
     }
 }
 

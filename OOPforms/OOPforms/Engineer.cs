@@ -9,7 +9,7 @@ namespace OOPforms
     public class Engineer: Employee
     {
        
-        public  List<string> equipment;
+        public  List<string> equipment { get; set; }
 
         public Engineer(string name, int year, float salary, int DayOfHolidays, List<string> equip) : base(name, year, salary, DayOfHolidays)
         {
