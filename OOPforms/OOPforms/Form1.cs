@@ -36,7 +36,7 @@ namespace OOPforms
             Companydata.DataSource = null;
             Companydata.DataSource = CompanyList;
         }
-        DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -45,53 +45,76 @@ namespace OOPforms
             Managerdata.DataSource = ManagerList;
             Engineerdata.DataSource = EngineerList;
             Cleanerdata.DataSource = CleanerList;
-            
-            cmb.HeaderText = "Equipment";
-            cmb.Name = "cmb";
-            cmb.MaxDropDownItems = 10;
-            
-            Engineerdata.Columns.Add(cmb);
+
+
+
         }
 
+       public DataGridViewComboBoxColumn comboBoxColumn;
         private void button3_Click(object sender, EventArgs e)
         {
-            Owner owner = new Owner(OwnerName.Text, int.Parse(OwnerYear.Text), float.Parse(OwnerBudget.Text), null);
-            OwnerName.Clear();
-            OwnerYear.Clear();
-            OwnerBudget.Clear();
+            if ((ManagerName.Text != "") && (ManagerYear.Text != "") && (ManagerSalary.Text != "") && (ManagerDayOfHolidays.Text != "") &&
+                (ManagerDepartment.Text != "") && (ManagerExperience.Text != ""))
+            {
+                Manager obj = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), float.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
+            ManagerDepartment.Text, int.Parse(ManagerExperience.Text));
 
-            OwnerList.Add(owner);
-            Ownerdata.DataSource = null;
-            Ownerdata.DataSource = OwnerList;
+
+                Owner owner = new Owner(OwnerName.Text, int.Parse(OwnerYear.Text), float.Parse(OwnerBudget.Text), obj);
+                OwnerName.Clear();
+                OwnerYear.Clear();
+                OwnerBudget.Clear();
+                ManagerName.Clear();
+                ManagerYear.Clear();
+                ManagerSalary.Clear();
+                ManagerDayOfHolidays.Clear();
+                ManagerExperience.Clear();
+                ManagerDepartment.Clear();
+                OwnerList.Add(owner);
+                Ownerdata.DataSource = null;
+                Ownerdata.DataSource = OwnerList;
+            }
+            else
+                MessageBox.Show("Заполните поля manager ");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Manager manager = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), float.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
             ManagerDepartment.Text, int.Parse(ManagerExperience.Text));
+
+            ManagerName.Clear();
+            ManagerYear.Clear();
+            ManagerSalary.Clear();
+            ManagerDayOfHolidays.Clear();
+            ManagerExperience.Clear();
+            ManagerDepartment.Clear();
             ManagerList.Add(manager);
             Managerdata.DataSource = null;
             Managerdata.DataSource = ManagerList;
         }
-        List<string> tmpList = new List<string>();
+       
        
         private void button5_Click(object sender, EventArgs e)
         {
 
             Engineer engineer = new Engineer(EngineerName.Text, int.Parse(EngineerYear.Text), float.Parse(EngineerSalary.Text), int.Parse(EngineerDayOfHolidays.Text),
-                tmpList);
+                EngineerEquipment.Text);
  
           
             EngineerName.Clear();
             EngineerYear.Clear();
             EngineerSalary.Clear();
             EngineerDayOfHolidays.Clear();
-
+          
             EngineerList.Add(engineer);
+
             Engineerdata.DataSource = null;
             Engineerdata.DataSource = EngineerList;
-            tmpList.Clear();
+
         }
+
+     
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -147,10 +170,57 @@ namespace OOPforms
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+
+
+
+
+        private void Удалить_Click(object sender, EventArgs e)
         {
-            tmpList.Add(EngineerEquipment.Text);
-            EngineerEquipment.Clear();
+            foreach (DataGridViewRow row in Companydata.SelectedRows)
+            {
+                Companydata.Rows.Remove(row); 
+            }
+        }
+
+        private void OwnerClick_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Ownerdata.SelectedRows)
+            {
+                Ownerdata.Rows.Remove(row); 
+            }
+        }
+
+        private void DeleteManager_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Managerdata.SelectedRows)
+            {
+                Managerdata.Rows.Remove(row);
+            }
+        }
+
+        private void DeleteEngineer_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Engineerdata.SelectedRows)
+            {
+                Engineerdata.Rows.Remove(row);
+            }
+        }
+
+        private void DeleteCleaner_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in Cleanerdata.SelectedRows)
+            {
+                Cleanerdata.Rows.Remove(row);
+            }
+        }
+
+        private void Ownerdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          Manager  imya = (Manager)Ownerdata.Rows[Ownerdata.CurrentRow.Index].Cells[1].Value;
+            string tmp ="Name:"+ imya.name + "Year:" + imya.year.ToString()+ "Salary:" + imya.salary.ToString() + "DayOfHolidays:" + imya.DayOfHolidays.ToString()+ "Experience:" + imya.Experience.ToString();
+
+            MessageBox.Show(tmp);
         }
     }
+    
 }

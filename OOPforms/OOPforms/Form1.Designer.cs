@@ -46,9 +46,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.CompanyT = new System.Windows.Forms.TabPage();
+            this.Удалить = new System.Windows.Forms.Button();
             this.OwnerT = new System.Windows.Forms.TabPage();
+            this.OwnerClick = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.ManagerT = new System.Windows.Forms.TabPage();
+            this.DeleteManager = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ManagerDayOfHolidays = new System.Windows.Forms.TextBox();
@@ -64,7 +67,7 @@
             this.ManagerName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.EngineerT = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
+            this.DeleteEngineer = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.EngineerEquipment = new System.Windows.Forms.TextBox();
@@ -76,7 +79,9 @@
             this.EngineerYear = new System.Windows.Forms.TextBox();
             this.EngineerName = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.CleanerT = new System.Windows.Forms.TabPage();
+            this.DeleteCleaner = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.CleanerNightShift = new System.Windows.Forms.ComboBox();
@@ -94,7 +99,6 @@
             this.Managerdata = new System.Windows.Forms.DataGridView();
             this.Engineerdata = new System.Windows.Forms.DataGridView();
             this.Cleanerdata = new System.Windows.Forms.DataGridView();
-            this.button6 = new System.Windows.Forms.Button();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
@@ -203,8 +207,9 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(45, 184);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.Size = new System.Drawing.Size(149, 22);
             this.textBox3.TabIndex = 12;
+            this.textBox3.Text = "заполните Manager";
             // 
             // OwnerBudget
             // 
@@ -263,7 +268,7 @@
             this.tabControl1.Controls.Add(this.ManagerT);
             this.tabControl1.Controls.Add(this.EngineerT);
             this.tabControl1.Controls.Add(this.CleanerT);
-            this.tabControl1.Location = new System.Drawing.Point(567, 42);
+            this.tabControl1.Location = new System.Drawing.Point(842, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(366, 324);
@@ -272,6 +277,7 @@
             // 
             // CompanyT
             // 
+            this.CompanyT.Controls.Add(this.Удалить);
             this.CompanyT.Controls.Add(this.groupBox1);
             this.CompanyT.Controls.Add(this.button1);
             this.CompanyT.Location = new System.Drawing.Point(4, 25);
@@ -282,8 +288,19 @@
             this.CompanyT.Text = "Company";
             this.CompanyT.UseVisualStyleBackColor = true;
             // 
+            // Удалить
+            // 
+            this.Удалить.Location = new System.Drawing.Point(219, 244);
+            this.Удалить.Name = "Удалить";
+            this.Удалить.Size = new System.Drawing.Size(106, 23);
+            this.Удалить.TabIndex = 6;
+            this.Удалить.Text = "Удалить";
+            this.Удалить.UseVisualStyleBackColor = true;
+            this.Удалить.Click += new System.EventHandler(this.Удалить_Click);
+            // 
             // OwnerT
             // 
+            this.OwnerT.Controls.Add(this.OwnerClick);
             this.OwnerT.Controls.Add(this.button3);
             this.OwnerT.Controls.Add(this.groupBox2);
             this.OwnerT.Location = new System.Drawing.Point(4, 25);
@@ -293,6 +310,16 @@
             this.OwnerT.TabIndex = 1;
             this.OwnerT.Text = "Owner";
             this.OwnerT.UseVisualStyleBackColor = true;
+            // 
+            // OwnerClick
+            // 
+            this.OwnerClick.Location = new System.Drawing.Point(235, 253);
+            this.OwnerClick.Name = "OwnerClick";
+            this.OwnerClick.Size = new System.Drawing.Size(106, 23);
+            this.OwnerClick.TabIndex = 8;
+            this.OwnerClick.Text = "Удалить";
+            this.OwnerClick.UseVisualStyleBackColor = true;
+            this.OwnerClick.Click += new System.EventHandler(this.OwnerClick_Click);
             // 
             // button3
             // 
@@ -306,6 +333,7 @@
             // 
             // ManagerT
             // 
+            this.ManagerT.Controls.Add(this.DeleteManager);
             this.ManagerT.Controls.Add(this.button4);
             this.ManagerT.Controls.Add(this.groupBox3);
             this.ManagerT.Location = new System.Drawing.Point(4, 25);
@@ -316,9 +344,19 @@
             this.ManagerT.Text = "Manager";
             this.ManagerT.UseVisualStyleBackColor = true;
             // 
+            // DeleteManager
+            // 
+            this.DeleteManager.Location = new System.Drawing.Point(220, 262);
+            this.DeleteManager.Name = "DeleteManager";
+            this.DeleteManager.Size = new System.Drawing.Size(132, 23);
+            this.DeleteManager.TabIndex = 9;
+            this.DeleteManager.Text = "Удалить";
+            this.DeleteManager.UseVisualStyleBackColor = true;
+            this.DeleteManager.Click += new System.EventHandler(this.DeleteManager_Click);
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(220, 252);
+            this.button4.Location = new System.Drawing.Point(220, 216);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(132, 24);
             this.button4.TabIndex = 8;
@@ -446,10 +484,9 @@
             // 
             // EngineerT
             // 
-            this.EngineerT.Controls.Add(this.button6);
-            this.EngineerT.Controls.Add(this.EngineerEquipment);
-            this.EngineerT.Controls.Add(this.label12);
+            this.EngineerT.Controls.Add(this.DeleteEngineer);
             this.EngineerT.Controls.Add(this.groupBox4);
+            this.EngineerT.Controls.Add(this.button5);
             this.EngineerT.Location = new System.Drawing.Point(4, 25);
             this.EngineerT.Name = "EngineerT";
             this.EngineerT.Padding = new System.Windows.Forms.Padding(3);
@@ -458,21 +495,22 @@
             this.EngineerT.Text = "Engineer";
             this.EngineerT.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // DeleteEngineer
             // 
-            this.button5.Location = new System.Drawing.Point(33, 216);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(132, 24);
-            this.button5.TabIndex = 9;
-            this.button5.Text = "Добавить";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.DeleteEngineer.Location = new System.Drawing.Point(212, 245);
+            this.DeleteEngineer.Name = "DeleteEngineer";
+            this.DeleteEngineer.Size = new System.Drawing.Size(132, 23);
+            this.DeleteEngineer.TabIndex = 19;
+            this.DeleteEngineer.Text = "Удалить";
+            this.DeleteEngineer.UseVisualStyleBackColor = true;
+            this.DeleteEngineer.Click += new System.EventHandler(this.DeleteEngineer_Click);
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Controls.Add(this.EngineerEquipment);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.EngineerDayOfHolidays);
-            this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.EngineerSalary);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label15);
@@ -481,7 +519,7 @@
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 264);
+            this.groupBox4.Size = new System.Drawing.Size(200, 283);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Engineer";
@@ -489,7 +527,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(246, 20);
+            this.label12.Location = new System.Drawing.Point(53, 198);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(75, 17);
             this.label12.TabIndex = 20;
@@ -497,7 +535,7 @@
             // 
             // EngineerEquipment
             // 
-            this.EngineerEquipment.Location = new System.Drawing.Point(238, 49);
+            this.EngineerEquipment.Location = new System.Drawing.Point(45, 220);
             this.EngineerEquipment.Name = "EngineerEquipment";
             this.EngineerEquipment.Size = new System.Drawing.Size(100, 22);
             this.EngineerEquipment.TabIndex = 19;
@@ -567,8 +605,19 @@
             this.label16.TabIndex = 11;
             this.label16.Text = "name";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(212, 204);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(132, 24);
+            this.button5.TabIndex = 9;
+            this.button5.Text = "Добавить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // CleanerT
             // 
+            this.CleanerT.Controls.Add(this.DeleteCleaner);
             this.CleanerT.Controls.Add(this.button2);
             this.CleanerT.Controls.Add(this.groupBox5);
             this.CleanerT.Location = new System.Drawing.Point(4, 25);
@@ -578,6 +627,16 @@
             this.CleanerT.TabIndex = 4;
             this.CleanerT.Text = "Cleaner";
             this.CleanerT.UseVisualStyleBackColor = true;
+            // 
+            // DeleteCleaner
+            // 
+            this.DeleteCleaner.Location = new System.Drawing.Point(223, 249);
+            this.DeleteCleaner.Name = "DeleteCleaner";
+            this.DeleteCleaner.Size = new System.Drawing.Size(129, 23);
+            this.DeleteCleaner.TabIndex = 11;
+            this.DeleteCleaner.Text = "Удалить";
+            this.DeleteCleaner.UseVisualStyleBackColor = true;
+            this.DeleteCleaner.Click += new System.EventHandler(this.DeleteCleaner_Click);
             // 
             // button2
             // 
@@ -696,61 +755,52 @@
             // Companydata
             // 
             this.Companydata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Companydata.Location = new System.Drawing.Point(12, 80);
+            this.Companydata.Location = new System.Drawing.Point(12, 12);
             this.Companydata.Name = "Companydata";
             this.Companydata.RowTemplate.Height = 24;
-            this.Companydata.Size = new System.Drawing.Size(456, 223);
+            this.Companydata.Size = new System.Drawing.Size(596, 322);
             this.Companydata.TabIndex = 9;
             // 
             // Ownerdata
             // 
             this.Ownerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Ownerdata.Location = new System.Drawing.Point(12, 80);
+            this.Ownerdata.Location = new System.Drawing.Point(12, 12);
             this.Ownerdata.Name = "Ownerdata";
             this.Ownerdata.RowTemplate.Height = 24;
-            this.Ownerdata.Size = new System.Drawing.Size(456, 223);
+            this.Ownerdata.Size = new System.Drawing.Size(596, 322);
             this.Ownerdata.TabIndex = 10;
             this.Ownerdata.Visible = false;
+            this.Ownerdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Ownerdata_CellContentClick);
             // 
             // Managerdata
             // 
             this.Managerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Managerdata.Location = new System.Drawing.Point(12, 80);
+            this.Managerdata.Location = new System.Drawing.Point(12, 12);
             this.Managerdata.Name = "Managerdata";
             this.Managerdata.RowTemplate.Height = 24;
-            this.Managerdata.Size = new System.Drawing.Size(456, 223);
+            this.Managerdata.Size = new System.Drawing.Size(596, 322);
             this.Managerdata.TabIndex = 11;
             this.Managerdata.Visible = false;
             // 
             // Engineerdata
             // 
             this.Engineerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Engineerdata.Location = new System.Drawing.Point(12, 80);
+            this.Engineerdata.Location = new System.Drawing.Point(12, 12);
             this.Engineerdata.Name = "Engineerdata";
             this.Engineerdata.RowTemplate.Height = 24;
-            this.Engineerdata.Size = new System.Drawing.Size(456, 223);
+            this.Engineerdata.Size = new System.Drawing.Size(596, 322);
             this.Engineerdata.TabIndex = 12;
             this.Engineerdata.Visible = false;
             // 
             // Cleanerdata
             // 
             this.Cleanerdata.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Cleanerdata.Location = new System.Drawing.Point(12, 80);
+            this.Cleanerdata.Location = new System.Drawing.Point(12, 12);
             this.Cleanerdata.Name = "Cleanerdata";
             this.Cleanerdata.RowTemplate.Height = 24;
-            this.Cleanerdata.Size = new System.Drawing.Size(456, 223);
+            this.Cleanerdata.Size = new System.Drawing.Size(596, 322);
             this.Cleanerdata.TabIndex = 13;
             this.Cleanerdata.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(235, 77);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(103, 51);
-            this.button6.TabIndex = 21;
-            this.button6.Text = "Добавить оборудование";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // form1BindingSource
             // 
@@ -764,7 +814,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1461, 568);
+            this.BackgroundImage = global::OOPforms.Properties.Resources._152335_or;
+            this.ClientSize = new System.Drawing.Size(1292, 568);
             this.Controls.Add(this.Cleanerdata);
             this.Controls.Add(this.Engineerdata);
             this.Controls.Add(this.Managerdata);
@@ -785,7 +836,6 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.EngineerT.ResumeLayout(false);
-            this.EngineerT.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.CleanerT.ResumeLayout(false);
@@ -870,7 +920,11 @@
         private System.Windows.Forms.DataGridView Managerdata;
         private System.Windows.Forms.DataGridView Engineerdata;
         private System.Windows.Forms.DataGridView Cleanerdata;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button Удалить;
+        private System.Windows.Forms.Button OwnerClick;
+        private System.Windows.Forms.Button DeleteManager;
+        private System.Windows.Forms.Button DeleteEngineer;
+        private System.Windows.Forms.Button DeleteCleaner;
     }
 }
 

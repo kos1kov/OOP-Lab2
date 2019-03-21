@@ -9,9 +9,9 @@ namespace OOPforms
     public class Engineer: Employee
     {
        
-        public  List<string> equipment { get; set; }
+        public string equipment { get; set; }
 
-        public Engineer(string name, int year, float salary, int DayOfHolidays, List<string> equip) : base(name, year, salary, DayOfHolidays)
+        public Engineer(string name, int year, float salary, int DayOfHolidays, string equip) : base(name, year, salary, DayOfHolidays)
         {
             this.equipment = equip;
         }
