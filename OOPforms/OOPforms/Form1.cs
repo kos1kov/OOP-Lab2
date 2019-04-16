@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
-
 namespace OOPforms
 {
     public partial class Form1 : Form
@@ -36,10 +30,12 @@ namespace OOPforms
             Companydata.DataSource = null;
             Companydata.DataSource = CompanyList;
         }
-
+    
         private void Form1_Load(object sender, EventArgs e)
         {
-
+           
+              BinarySerializer.CreateInstance();
+              JSONserialized.CreateJson();
             Companydata.DataSource = CompanyList;
             Ownerdata.DataSource = OwnerList;
             Managerdata.DataSource = ManagerList;
@@ -172,7 +168,14 @@ namespace OOPforms
 
 
 
-
+        private void UpdateGrid()
+        {
+            Companydata.DataSource = CompanyList;
+            Ownerdata.DataSource = OwnerList;
+            Managerdata.DataSource = ManagerList;
+            Engineerdata.DataSource = EngineerList;
+            Cleanerdata.DataSource = CleanerList;
+        }
 
         private void Удалить_Click(object sender, EventArgs e)
         {
@@ -220,6 +223,44 @@ namespace OOPforms
             string tmp ="Name:"+ imya.name + "Year:" + imya.year.ToString()+ "Salary:" + imya.salary.ToString() + "DayOfHolidays:" + imya.DayOfHolidays.ToString()+ "Experience:" + imya.Experience.ToString();
 
             MessageBox.Show(tmp);
+        }
+
+        private void Serializac_Click(object sender, EventArgs e)
+        {
+            BinarySerializer.Instance.Wcompany = CompanyList;
+            BinarySerializer.SaveInstance("temp.bin");
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            BinarySerializer.LoadInstance("temp.bin");
+            CompanyList = BinarySerializer.Instance.Wcompany;
+            UpdateGrid();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            JSONserialized.jsonFormatter.JCompany = CompanyList;
+            JSONserialized.Savejson("people.json");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           
+            JSONserialized.Loadjson("people.json");
+            CompanyList = JSONserialized.jsonFormatter.JCompany;
+            UpdateGrid();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+   
+            TextSerialize.CreateText();
+            TextSerialize.text.TCompany = CompanyList;
+            TextSerialize.text.TOwner = OwnerList;
+            TextSerialize.SaveText();
+            
         }
     }
     

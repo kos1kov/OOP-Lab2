@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPforms
 {
+    [Serializable]
     class Cleaner : Employee
     {
         public bool NightShift { get; set; }

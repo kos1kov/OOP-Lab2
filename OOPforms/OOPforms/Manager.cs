@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPforms
 {
+    [Serializable]
     public class Manager:Employee
     {
         public string Department { get; set; }

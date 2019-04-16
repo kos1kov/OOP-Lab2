@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 namespace OOPforms
 {
-   public class Owner : Company
+    [Serializable]
+    public class Owner : Company
     {
         public float budget { get; set; }
 

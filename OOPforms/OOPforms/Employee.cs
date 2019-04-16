@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPforms
 {
+   // [Serializable]
     public class Employee:Company
     {
         public float salary { get; set; }

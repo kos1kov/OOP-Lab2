@@ -99,8 +99,13 @@
             this.Managerdata = new System.Windows.Forms.DataGridView();
             this.Engineerdata = new System.Windows.Forms.DataGridView();
             this.Cleanerdata = new System.Windows.Forms.DataGridView();
+            this.Serializac = new System.Windows.Forms.Button();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -802,6 +807,16 @@
             this.Cleanerdata.TabIndex = 13;
             this.Cleanerdata.Visible = false;
             // 
+            // Serializac
+            // 
+            this.Serializac.Location = new System.Drawing.Point(646, 373);
+            this.Serializac.Name = "Serializac";
+            this.Serializac.Size = new System.Drawing.Size(133, 23);
+            this.Serializac.TabIndex = 14;
+            this.Serializac.Text = "Сериализация";
+            this.Serializac.UseVisualStyleBackColor = true;
+            this.Serializac.Click += new System.EventHandler(this.Serializac_Click);
+            // 
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
@@ -810,12 +825,57 @@
             // 
             this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(814, 373);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(646, 429);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(133, 23);
+            this.button7.TabIndex = 16;
+            this.button7.Text = "Сериализация";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(814, 429);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 17;
+            this.button8.Text = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(334, 446);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 18;
+            this.button9.Text = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OOPforms.Properties.Resources._152335_or;
             this.ClientSize = new System.Drawing.Size(1292, 568);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.Serializac);
             this.Controls.Add(this.Cleanerdata);
             this.Controls.Add(this.Engineerdata);
             this.Controls.Add(this.Managerdata);
@@ -925,6 +985,11 @@
         private System.Windows.Forms.Button DeleteManager;
         private System.Windows.Forms.Button DeleteEngineer;
         private System.Windows.Forms.Button DeleteCleaner;
+        private System.Windows.Forms.Button Serializac;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
     }
 }
 
