@@ -17,6 +17,12 @@ namespace OOPforms
         public BindingList<Company> JCompany { get; set; }
         [DataMember]
         public BindingList<Owner> Jowner { get; set; }
+        [DataMember]
+        public BindingList<Manager> JManager { get; set; }
+        [DataMember]
+        public BindingList<Cleaner> JCleaner { get; set; }
+        [DataMember]
+        public BindingList<Engineer> JEngineer { get; set; }
         public static JSONserialized jsonFormatter { get; set; }
         public static void CreateJson()
         {

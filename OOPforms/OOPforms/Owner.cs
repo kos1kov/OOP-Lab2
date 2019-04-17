@@ -8,9 +8,9 @@ namespace OOPforms
     [Serializable]
     public class Owner : Company
     {
-        public float budget { get; set; }
+        public int budget { get; set; }
 
-        public Owner(string name, int year, float budget, Manager manager) : base(name, year)
+        public Owner(string name, int year, int budget, Manager manager) : base(name, year)
         {
             this.budget = budget;
             this.manager = manager;

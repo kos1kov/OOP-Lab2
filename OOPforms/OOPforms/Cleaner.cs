@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 namespace OOPforms
 {
     [Serializable]
-    class Cleaner : Employee
+    public class Cleaner : Employee
     {
-        public bool NightShift { get; set; }
+      //  public bool NightShift { get; set; }
 
 
-        public Cleaner(string name, int year, float salary, int DayOfHolidays, bool IsNightShift) : base(name, year, salary, DayOfHolidays)
+        public Cleaner( int salary, int DayOfHolidays, string name, int year) : base(name, year, salary, DayOfHolidays)
         {
-            NightShift = IsNightShift;
+          //  NightShift = IsNightShift;
         }
 
 
 
-        public override string Info()
-        {
-            return $"{(NightShift ? "Cleaner is working in nightshift" : "Cleaner is at dayshift")}";
-        }
+        //public override string Info()
+        //{
+        //    //return $"{(NightShift ? "Cleaner is working in nightshift" : "Cleaner is at dayshift")}";
+        //}
     }
 }

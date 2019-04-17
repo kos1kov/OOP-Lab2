@@ -12,7 +12,7 @@ namespace OOPforms
         public string Department { get; set; }
         public int Experience { get; set; }
 
-        public Manager(string name, int year, float salary, int DayOfHolidays, string Department, int Experience) : base(name, year, salary, DayOfHolidays)
+        public Manager(string Department, int Experience, int salary, int DayOfHolidays, string name, int year) : base(name, year, salary, DayOfHolidays)
         {
             this.Department = Department;
             this.Experience = Experience;

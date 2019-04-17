@@ -12,7 +12,7 @@ namespace OOPforms
        
         public string equipment { get; set; }
 
-        public Engineer(string name, int year, float salary, int DayOfHolidays, string equip) : base(name, year, salary, DayOfHolidays)
+        public Engineer(string equip, int salary, int DayOfHolidays, string name, int year ) : base(name, year, salary, DayOfHolidays)
         {
             this.equipment = equip;
         }

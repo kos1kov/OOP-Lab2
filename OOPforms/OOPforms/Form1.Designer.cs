@@ -84,8 +84,6 @@
             this.DeleteCleaner = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.CleanerNightShift = new System.Windows.Forms.ComboBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.CleanerDayOfHolidays = new System.Windows.Forms.TextBox();
             this.CleanerSalary = new System.Windows.Forms.TextBox();
@@ -100,12 +98,13 @@
             this.Engineerdata = new System.Windows.Forms.DataGridView();
             this.Cleanerdata = new System.Windows.Forms.DataGridView();
             this.Serializac = new System.Windows.Forms.Button();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -655,8 +654,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.CleanerNightShift);
-            this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.CleanerDayOfHolidays);
             this.groupBox5.Controls.Add(this.CleanerSalary);
@@ -671,26 +668,6 @@
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Cleaner";
-            // 
-            // CleanerNightShift
-            // 
-            this.CleanerNightShift.FormattingEnabled = true;
-            this.CleanerNightShift.Items.AddRange(new object[] {
-            "да",
-            "нет"});
-            this.CleanerNightShift.Location = new System.Drawing.Point(36, 213);
-            this.CleanerNightShift.Name = "CleanerNightShift";
-            this.CleanerNightShift.Size = new System.Drawing.Size(121, 24);
-            this.CleanerNightShift.TabIndex = 21;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(59, 195);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(69, 17);
-            this.label18.TabIndex = 20;
-            this.label18.Text = "NightShift";
             // 
             // label19
             // 
@@ -813,17 +790,9 @@
             this.Serializac.Name = "Serializac";
             this.Serializac.Size = new System.Drawing.Size(133, 23);
             this.Serializac.TabIndex = 14;
-            this.Serializac.Text = "Сериализация";
+            this.Serializac.Text = "binary";
             this.Serializac.UseVisualStyleBackColor = true;
             this.Serializac.Click += new System.EventHandler(this.Serializac_Click);
-            // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
-            // 
-            // form1BindingSource1
-            // 
-            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
             // 
             // button6
             // 
@@ -831,7 +800,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 15;
-            this.button6.Text = "button6";
+            this.button6.Text = "unbinary";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -841,7 +810,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(133, 23);
             this.button7.TabIndex = 16;
-            this.button7.Text = "Сериализация";
+            this.button7.Text = "json";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -851,26 +820,45 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(75, 23);
             this.button8.TabIndex = 17;
-            this.button8.Text = "button8";
+            this.button8.Text = "unjson";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(334, 446);
+            this.button9.Location = new System.Drawing.Point(335, 460);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(75, 23);
             this.button9.TabIndex = 18;
-            this.button9.Text = "button9";
+            this.button9.Text = "text";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(440, 460);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(75, 23);
+            this.button10.TabIndex = 19;
+            this.button10.Text = "untext";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
+            // 
+            // form1BindingSource1
+            // 
+            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OOPforms.Properties.Resources._152335_or;
-            this.ClientSize = new System.Drawing.Size(1292, 568);
+            this.ClientSize = new System.Drawing.Size(1209, 593);
+            this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -961,8 +949,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TabPage CleanerT;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox CleanerNightShift;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox CleanerDayOfHolidays;
         private System.Windows.Forms.TextBox CleanerSalary;
@@ -990,6 +976,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 

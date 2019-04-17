@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace OOPforms
 {
-   // [Serializable]
+    [Serializable]
     public class Employee:Company
     {
-        public float salary { get; set; }
+        public int salary { get; set; }
         
 
-        public Employee(string name, int year, float salary, int DayOfHolidays) : base(name, year)
+        public Employee(string name, int year, int salary, int DayOfHolidays) : base(name, year)
         {
             this.salary = salary;
             this.DayOfHolidays = DayOfHolidays;

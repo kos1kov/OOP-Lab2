@@ -52,11 +52,11 @@ namespace OOPforms
             if ((ManagerName.Text != "") && (ManagerYear.Text != "") && (ManagerSalary.Text != "") && (ManagerDayOfHolidays.Text != "") &&
                 (ManagerDepartment.Text != "") && (ManagerExperience.Text != ""))
             {
-                Manager obj = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), float.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
+                Manager obj = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), int.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
             ManagerDepartment.Text, int.Parse(ManagerExperience.Text));
 
 
-                Owner owner = new Owner(OwnerName.Text, int.Parse(OwnerYear.Text), float.Parse(OwnerBudget.Text), obj);
+                Owner owner = new Owner(OwnerName.Text, int.Parse(OwnerYear.Text), int.Parse(OwnerBudget.Text), obj);
                 OwnerName.Clear();
                 OwnerYear.Clear();
                 OwnerBudget.Clear();
@@ -76,8 +76,8 @@ namespace OOPforms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Manager manager = new Manager(ManagerName.Text, int.Parse(ManagerYear.Text), float.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
-            ManagerDepartment.Text, int.Parse(ManagerExperience.Text));
+            Manager manager = new Manager(ManagerDepartment.Text, int.Parse(ManagerExperience.Text), int.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
+             ManagerName.Text, int.Parse(ManagerYear.Text));
 
             ManagerName.Clear();
             ManagerYear.Clear();
@@ -94,8 +94,8 @@ namespace OOPforms
         private void button5_Click(object sender, EventArgs e)
         {
 
-            Engineer engineer = new Engineer(EngineerName.Text, int.Parse(EngineerYear.Text), float.Parse(EngineerSalary.Text), int.Parse(EngineerDayOfHolidays.Text),
-                EngineerEquipment.Text);
+            Engineer engineer = new Engineer(EngineerEquipment.Text, int.Parse(EngineerSalary.Text), int.Parse(EngineerDayOfHolidays.Text), EngineerName.Text, int.Parse(EngineerYear.Text)
+                );
  
           
             EngineerName.Clear();
@@ -114,16 +114,8 @@ namespace OOPforms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool tmp;
-            if (CleanerNightShift.SelectedItem.ToString() == "да")
-            {
-                 tmp = true;
-            }else
-            {
-                tmp = false;
-            }
-            Cleaner cleaner = new Cleaner(CleanerName.Text, int.Parse(CleanerYear.Text), float.Parse(CleanerSalary.Text), int.Parse(CleanerDayOfHolidays.Text),
-                tmp);
+
+            Cleaner cleaner = new Cleaner( int.Parse(CleanerSalary.Text), int.Parse(CleanerDayOfHolidays.Text), CleanerName.Text, int.Parse(CleanerYear.Text));
             CleanerName.Clear();
             CleanerYear.Clear();
             CleanerSalary.Clear();
@@ -242,6 +234,10 @@ namespace OOPforms
         private void button7_Click(object sender, EventArgs e)
         {
             JSONserialized.jsonFormatter.JCompany = CompanyList;
+            JSONserialized.jsonFormatter.Jowner = OwnerList;
+            JSONserialized.jsonFormatter.JCleaner = CleanerList;
+            JSONserialized.jsonFormatter.JEngineer = EngineerList;
+            JSONserialized.jsonFormatter.JManager = ManagerList;
             JSONserialized.Savejson("people.json");
         }
 
@@ -250,6 +246,10 @@ namespace OOPforms
            
             JSONserialized.Loadjson("people.json");
             CompanyList = JSONserialized.jsonFormatter.JCompany;
+            OwnerList = JSONserialized.jsonFormatter.Jowner;
+            CleanerList = JSONserialized.jsonFormatter.JCleaner;
+            EngineerList = JSONserialized.jsonFormatter.JEngineer;
+            ManagerList = JSONserialized.jsonFormatter.JManager;
             UpdateGrid();
         }
 
@@ -258,9 +258,24 @@ namespace OOPforms
    
             TextSerialize.CreateText();
             TextSerialize.text.TCompany = CompanyList;
-            TextSerialize.text.TOwner = OwnerList;
+            TextSerialize.text.TEngineer = EngineerList;
+           
+            TextSerialize.text.TCleaner = CleanerList;
+            TextSerialize.text.TManager = ManagerList;
             TextSerialize.SaveText();
             
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            TextSerialize.CreateText();
+            TextSerialize.LoadText();
+            CompanyList = TextSerialize.text.TCompany;
+            CleanerList = TextSerialize.text.TCleaner;
+            EngineerList = TextSerialize.text.TEngineer;
+            ManagerList = TextSerialize.text.TManager;
+            
+            UpdateGrid();
         }
     }
     
