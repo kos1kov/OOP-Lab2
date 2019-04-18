@@ -97,14 +97,11 @@
             this.Managerdata = new System.Windows.Forms.DataGridView();
             this.Engineerdata = new System.Windows.Forms.DataGridView();
             this.Cleanerdata = new System.Windows.Forms.DataGridView();
-            this.Serializac = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Serialize = new System.Windows.Forms.Button();
+            this.Desirialize = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -784,66 +781,6 @@
             this.Cleanerdata.TabIndex = 13;
             this.Cleanerdata.Visible = false;
             // 
-            // Serializac
-            // 
-            this.Serializac.Location = new System.Drawing.Point(646, 373);
-            this.Serializac.Name = "Serializac";
-            this.Serializac.Size = new System.Drawing.Size(133, 23);
-            this.Serializac.TabIndex = 14;
-            this.Serializac.Text = "binary";
-            this.Serializac.UseVisualStyleBackColor = true;
-            this.Serializac.Click += new System.EventHandler(this.Serializac_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(814, 373);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "unbinary";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(646, 429);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(133, 23);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "json";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(814, 429);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "unjson";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(335, 460);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 18;
-            this.button9.Text = "text";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(440, 460);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 23);
-            this.button10.TabIndex = 19;
-            this.button10.Text = "untext";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // form1BindingSource
             // 
             this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
@@ -852,18 +789,47 @@
             // 
             this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "text",
+            "json",
+            "binary"});
+            this.comboBox1.Location = new System.Drawing.Point(204, 372);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.TabIndex = 20;
+            // 
+            // Serialize
+            // 
+            this.Serialize.Location = new System.Drawing.Point(163, 424);
+            this.Serialize.Name = "Serialize";
+            this.Serialize.Size = new System.Drawing.Size(75, 23);
+            this.Serialize.TabIndex = 21;
+            this.Serialize.Text = "Serialize";
+            this.Serialize.UseVisualStyleBackColor = true;
+            this.Serialize.Click += new System.EventHandler(this.Serialize_Click);
+            // 
+            // Desirialize
+            // 
+            this.Desirialize.Location = new System.Drawing.Point(255, 424);
+            this.Desirialize.Name = "Desirialize";
+            this.Desirialize.Size = new System.Drawing.Size(86, 26);
+            this.Desirialize.TabIndex = 22;
+            this.Desirialize.Text = "Deserialize";
+            this.Desirialize.UseVisualStyleBackColor = true;
+            this.Desirialize.Click += new System.EventHandler(this.Desirialize_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OOPforms.Properties.Resources._152335_or;
             this.ClientSize = new System.Drawing.Size(1209, 593);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.Serializac);
+            this.Controls.Add(this.Desirialize);
+            this.Controls.Add(this.Serialize);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Cleanerdata);
             this.Controls.Add(this.Engineerdata);
             this.Controls.Add(this.Managerdata);
@@ -971,12 +937,9 @@
         private System.Windows.Forms.Button DeleteManager;
         private System.Windows.Forms.Button DeleteEngineer;
         private System.Windows.Forms.Button DeleteCleaner;
-        private System.Windows.Forms.Button Serializac;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button Serialize;
+        private System.Windows.Forms.Button Desirialize;
     }
 }
 

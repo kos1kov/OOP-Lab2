@@ -167,8 +167,7 @@ namespace OOPforms
         public IEnumerator GetEnumerator()
         {
             return list.GetEnumerator();
-           // return text.TOwner.GetEnumerator();
-         //   throw new NotImplementedException();
+
         }
 
     }

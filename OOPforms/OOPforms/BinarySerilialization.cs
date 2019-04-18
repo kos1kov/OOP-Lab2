@@ -15,10 +15,14 @@ namespace OOPforms
         
             public BindingList<Company> Wcompany { get; set; }
             public BindingList<Owner> Wowner { get; set; }
+            public BindingList<Cleaner> Wcleaner { get; set; }
+            public BindingList<Manager> Wmanager{ get; set; }
+            public BindingList<Engineer> Wengineer { get; set; }
+        
 
 
-            //
-            public static BinarySerializer Instance { get; private set; }
+        //
+        public static BinarySerializer Instance { get; private set; }
            
             public static void CreateInstance()
             {

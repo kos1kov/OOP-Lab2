@@ -217,21 +217,30 @@ namespace OOPforms
             MessageBox.Show(tmp);
         }
 
-        private void Serializac_Click(object sender, EventArgs e)
+        private void BinarySerl()
         {
+
             BinarySerializer.Instance.Wcompany = CompanyList;
+            BinarySerializer.Instance.Wowner = OwnerList;
+            BinarySerializer.Instance.Wcleaner = CleanerList;
+            BinarySerializer.Instance.Wmanager = ManagerList;
+            BinarySerializer.Instance.Wengineer = EngineerList;
             BinarySerializer.SaveInstance("temp.bin");
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void BinaryDerl()
         {
             BinarySerializer.LoadInstance("temp.bin");
             CompanyList = BinarySerializer.Instance.Wcompany;
+            OwnerList = BinarySerializer.Instance.Wowner;
+            CleanerList = BinarySerializer.Instance.Wcleaner;
+            ManagerList = BinarySerializer.Instance.Wmanager;
+            EngineerList = BinarySerializer.Instance.Wengineer;
             UpdateGrid();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void json()
         {
             JSONserialized.jsonFormatter.JCompany = CompanyList;
             JSONserialized.jsonFormatter.Jowner = OwnerList;
@@ -241,7 +250,7 @@ namespace OOPforms
             JSONserialized.Savejson("people.json");
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void Dejson()
         {
            
             JSONserialized.Loadjson("people.json");
@@ -253,9 +262,8 @@ namespace OOPforms
             UpdateGrid();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        public  void textSerialezed()
         {
-   
             TextSerialize.CreateText();
             TextSerialize.text.TCompany = CompanyList;
             TextSerialize.text.TEngineer = EngineerList;
@@ -266,7 +274,7 @@ namespace OOPforms
             
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void textDeserialezed()
         {
             TextSerialize.CreateText();
             TextSerialize.LoadText();
@@ -277,6 +285,64 @@ namespace OOPforms
             
             UpdateGrid();
         }
+
+        private void Serialize_Click(object sender, EventArgs e)
+        {
+            SelectS(comboBox1.Text, (sender as Button).Text);
+        }
+        private void Desirialize_Click(object sender, EventArgs e)
+        {
+            SelectS(comboBox1.Text, (sender as Button).Text);
+        }
+        public  void SelectS(string ext,string name)
+        {
+            if(name == "Serialize")
+            {
+                switch (ext)
+                {
+                    case "text":
+                        {
+                            textSerialezed();
+                            break;
+                        }
+                    case "binary":
+                        {
+                            BinarySerl();
+                            break;
+                        }
+                    case "json":
+                        {
+                            json();
+                            break;
+                        }
+                }
+            }
+            else
+            {
+                switch (ext)
+                {
+                    case "text":
+                        {
+                            textDeserialezed();
+                            break;
+                        }
+                    case "binary":
+                        {
+                            BinaryDerl();
+                            break;
+                        }
+                    case "json":
+                        {
+                            Dejson();
+                            break;
+                        }
+                }
+            }
+            
+
+        }
+        
+       
     }
     
 }
