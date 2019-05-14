@@ -47,7 +47,7 @@ namespace OOPforms
             {
                 list.Add(member);
             }
-            int i = 0;
+         
 
                 String str = "["; 
                 foreach (Object member in list)
@@ -65,7 +65,7 @@ namespace OOPforms
                 }
                 str += "]";
                 arrayInfo.Add(str);
-                i++;
+                
 
             using (FileStream stream = new FileStream("textser.txt", FileMode.Create))
             {

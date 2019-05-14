@@ -1,7 +1,10 @@
-﻿using System;
+﻿using MyArchivePlug;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 namespace OOPforms
@@ -23,6 +26,10 @@ namespace OOPforms
        private BindingList<Cleaner> CleanerList = new BindingList<Cleaner>();
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(CompanyYear.Text, out int n))
+            {
+                return;
+            }
             Company company = new Company(CompanyName.Text, int.Parse(CompanyYear.Text));
             CompanyName.Clear();
             CompanyYear.Clear();
@@ -42,7 +49,7 @@ namespace OOPforms
             Engineerdata.DataSource = EngineerList;
             Cleanerdata.DataSource = CleanerList;
 
-
+            LoadPlugins();
 
         }
 
@@ -76,6 +83,18 @@ namespace OOPforms
 
         private void button4_Click(object sender, EventArgs e)
         {
+            if (!int.TryParse(ManagerExperience.Text, out int n))
+            {
+                return;
+            }
+            if (!int.TryParse(ManagerSalary.Text, out int t))
+            {
+                return;
+            }
+            if (!int.TryParse(ManagerDayOfHolidays.Text, out int l))
+            {
+                return;
+            }
             Manager manager = new Manager(ManagerDepartment.Text, int.Parse(ManagerExperience.Text), int.Parse(ManagerSalary.Text), int.Parse(ManagerDayOfHolidays.Text),
              ManagerName.Text, int.Parse(ManagerYear.Text));
 
@@ -114,7 +133,7 @@ namespace OOPforms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+           
             Cleaner cleaner = new Cleaner( int.Parse(CleanerSalary.Text), int.Parse(CleanerDayOfHolidays.Text), CleanerName.Text, int.Parse(CleanerYear.Text));
             CleanerName.Clear();
             CleanerYear.Clear();
@@ -341,8 +360,100 @@ namespace OOPforms
             
 
         }
-        
-       
+
+        private readonly string pluginPath = Path.Combine(
+                                               Directory.GetCurrentDirectory()
+                                              );
+        public static List<IArchive> plugins = new List<IArchive>();
+
+
+        public void LoadPlugins()
+        {
+            
+            //Load the DLLs from the Plugins directory
+            if (Directory.Exists(Constants.FolderName))
+            {
+                string[] files = Directory.GetFiles(Constants.FolderName);
+                foreach (string file in files)
+                {
+                    if (file.EndsWith(".dll"))
+                    {
+                        Assembly.LoadFile(Path.GetFullPath(file));
+                    }
+                }
+            }
+
+            Type interfaceType = typeof(IArchive);
+            //Fetch all types that implement the interface IPlugin and are a class
+            Type[] types = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(a => a.GetTypes())
+                .Where(p => interfaceType.IsAssignableFrom(p) && p.IsClass)
+                .ToArray();
+            foreach (Type type in types)
+            {
+                //Create a new instance of all found types
+                plugins.Add((IArchive)Activator.CreateInstance(type));
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+            SaveFileDialog dlg = new SaveFileDialog();
+           
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            string filename = openFileDialog1.FileName;
+            string ext1 = Path.GetExtension(openFileDialog1.FileName);
+            if (plugins.Count == 0)
+            {
+                MessageBox.Show("No plugins");
+                return;
+            }
+            string filter = string.Empty;
+            foreach (IArchive alg in plugins)
+            {
+                filter += alg.Name + " archive (*" + alg.Format + ")|*" + alg.Format + "|";
+            }
+            dlg.Filter = filter.TrimEnd('|');
+            if (dlg.ShowDialog() == DialogResult.Cancel)
+                return;
+            string newfilename = dlg.FileName;
+           
+            string ext = Path.GetExtension(dlg.FileName);
+            
+            IArchive archive = plugins.Find(x => x.Format == ext);
+            archive.Compress(filename,filename+ext);
+            File.Delete(filename);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (plugins.Count == 0)
+            {
+                MessageBox.Show("No plugins");
+                return;
+            }
+            string filter = string.Empty;
+           
+            foreach (IArchive alg in plugins)
+            {
+                filter += "*" + alg.Format + ";";
+            }
+            filter = filter.TrimEnd(';');
+            OpenFileDialog dlg = new OpenFileDialog();
+           
+            dlg.Filter = "Archives (" + filter + ")|" + filter;
+            if (dlg.ShowDialog() == DialogResult.Cancel)
+                return;
+            string ext = Path.GetExtension(dlg.FileName);
+            IArchive archive = plugins.Find(x => x.Format == ext);
+            string newfilename = dlg.FileName.Replace(ext, "");
+
+
+            archive.Decompress(dlg.FileName, newfilename);
+            File.Delete(dlg.FileName);
+        }
     }
     
 }

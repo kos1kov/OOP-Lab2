@@ -98,5 +98,11 @@
   <ItemGroup>
     <None Include="Resources\152335_or1.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyArchivePlug\MyArchivePlug.csproj">
+      <Project>{1ffae67b-0e19-48cb-98d6-493f8a3e97dc}</Project>
+      <Name>MyArchivePlug</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

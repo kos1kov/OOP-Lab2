@@ -97,11 +97,14 @@
             this.Managerdata = new System.Windows.Forms.DataGridView();
             this.Engineerdata = new System.Windows.Forms.DataGridView();
             this.Cleanerdata = new System.Windows.Forms.DataGridView();
-            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.Serialize = new System.Windows.Forms.Button();
             this.Desirialize = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.form1BindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -781,14 +784,6 @@
             this.Cleanerdata.TabIndex = 13;
             this.Cleanerdata.Visible = false;
             // 
-            // form1BindingSource
-            // 
-            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
-            // 
-            // form1BindingSource1
-            // 
-            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -821,12 +816,46 @@
             this.Desirialize.UseVisualStyleBackColor = true;
             this.Desirialize.Click += new System.EventHandler(this.Desirialize_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(693, 210);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(693, 157);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.TabIndex = 24;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(OOPforms.Form1);
+            // 
+            // form1BindingSource1
+            // 
+            this.form1BindingSource1.DataSource = typeof(OOPforms.Form1);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::OOPforms.Properties.Resources._152335_or;
             this.ClientSize = new System.Drawing.Size(1209, 593);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.Desirialize);
             this.Controls.Add(this.Serialize);
             this.Controls.Add(this.comboBox1);
@@ -940,6 +969,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button Serialize;
         private System.Windows.Forms.Button Desirialize;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

@@ -1,5 +1,0 @@
-[
-OOPforms.Company{ name=dima year=2000 }
-OOPforms.Engineer{ equipment=dsf salary=21 DayOfHolidays=21 name=dima year=200 }
-OOPforms.Manager{ Department=ds Experience=21 salary=1000 DayOfHolidays=1 name=denis year=2000 }
-OOPforms.Cleaner{ salary=200 DayOfHolidays=21 name=kin year=2000 }]
