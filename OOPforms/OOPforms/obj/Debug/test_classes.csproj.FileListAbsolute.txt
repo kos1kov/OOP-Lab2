@@ -18,6 +18,3 @@ C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\obj
 C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\obj\Debug\test_classes.csproj.CoreCompileInputs.cache
 C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\obj\Debug\OOPforms.exe
 C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\obj\Debug\OOPforms.pdb
-C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\bin\Debug\MyArchivePlug.dll
-C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\bin\Debug\MyArchivePlug.pdb
-C:\Users\dimak\OneDrive\Документы\GitHub\OOP-Lab2\OOPforms\OOPforms\obj\Debug\test_classes.csproj.CopyComplete

@@ -1,4 +1,5 @@
-﻿using MyArchivePlug;
+﻿
+using OOPforms.plugin;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -361,9 +362,7 @@ namespace OOPforms
 
         }
 
-        private readonly string pluginPath = Path.Combine(
-                                               Directory.GetCurrentDirectory()
-                                              );
+        private readonly string pluginPath = "./";
         public static List<IArchive> plugins = new List<IArchive>();
 
 
@@ -371,9 +370,9 @@ namespace OOPforms
         {
             
             //Load the DLLs from the Plugins directory
-            if (Directory.Exists(Constants.FolderName))
+            if (Directory.Exists(pluginPath))
             {
-                string[] files = Directory.GetFiles(Constants.FolderName);
+                string[] files = Directory.GetFiles(pluginPath);
                 foreach (string file in files)
                 {
                     if (file.EndsWith(".dll"))

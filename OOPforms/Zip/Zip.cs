@@ -6,11 +6,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO.Compression;
+using OOPforms.plugin;
 
-
-namespace MyArchivePlug
+namespace Zip
 {
-    class ZipArchiver : IArchive
+    public class Zip : IArchive
     {
         public string Name { get; } = "Zip";
 
@@ -18,7 +18,6 @@ namespace MyArchivePlug
 
         public string inputFile;
 
-        public ZipArchiver() { }
 
         public void Compress(string inputFile, string outputFile)
         {
@@ -45,7 +44,7 @@ namespace MyArchivePlug
             {
                 return;
             }
-        
+
         }
     }
 }
